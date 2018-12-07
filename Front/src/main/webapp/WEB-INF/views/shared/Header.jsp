@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       <li><a href="${contextRoot}/aboutUs">About Us</a> </li>
-        <li class="active"><a href="home">Home</a></li>
+        <li class="active"><a href="${contextRoot}/home">Home</a></li>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category
         <span class="caret"></span></a>
@@ -57,7 +57,7 @@
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="loginForm"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="${contextRoot}/loginForm"><span class="glyphicon glyphicon-user"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li> 
       </ul>

@@ -92,6 +92,13 @@
 </div>
 </div>
 
+<div class="form-group">
+<label for="pimage2" class="control-label col-sm-2"> Upload Image2 :</label>
+<div class="col-sm-10">
+<f:input type="file" class="form-control" id="pimage2" placeholder="Choose Image" path="pimage2"/>
+</div>
+</div>
+
 
 <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">

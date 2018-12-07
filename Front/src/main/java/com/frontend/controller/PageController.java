@@ -47,15 +47,13 @@ public class PageController {
 		return "ContactUs";
 	}
 	
-	@RequestMapping(value="/loginForm",method=RequestMethod.GET)
-	public String getLoginForm(){
-		return "Login";
-	}
-	@RequestMapping(value="/signUpForm",method=RequestMethod.GET)
-	public String getSignUpForm(){
-		return "SignUpForm";
-}
+	@RequestMapping(value="/Msg",method=RequestMethod.GET)
+	public String getMsg(){
+		return "Msg";
+		
+		
 	
 	
+	}	
 	
 }

@@ -1,32 +1,31 @@
 package com.backend.daoImpl;
 
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.backend.dao.CartDao;
-import com.backend.model.Cart;
+import com.backend.dao.AddressDao;
+import com.backend.model.Address;
 
 
-@Repository("cartDao")
+@Repository("addressDao")
 @Transactional
-
-public class CartDaoImpl implements CartDao {
-
-	
+public class AddressDaoImpl implements AddressDao
+{
 	@Autowired
 	SessionFactory sessionFactory;
-	public boolean addCart(Cart cart) {
+	public boolean insertAddress(Address address)
+	
+	{
 		try
 		{
-			
 			Session session=sessionFactory.getCurrentSession();
-			session.save(cart);
+			session.save(address);
 			return true;
+			
 			
 		}
 		catch(Exception e)
@@ -34,41 +33,61 @@ public class CartDaoImpl implements CartDao {
 			e.printStackTrace();
 		}
 		return false;
+		
 	}
 
-	
-	public Cart getCartByCustomer(String customerId) {
+	@Override
+	public Address getAddressById(int addressId)
+	{
 		try
 		{
 			
 			Session session=sessionFactory.getCurrentSession();
-			Cart cart=(Cart)session.get(Cart.class, customerId);
-			return cart;
-			
+			Address address=(Address)session.get(Address.class, addressId);
+			return address;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		return null;
+		
+		
 	}
 
-	
-	public boolean deleteCart(int cartId) {
+	@Override
+	public void updateAddress(Address address) 
+	{
 		try
 		{
-			
 			Session session=sessionFactory.getCurrentSession();
-			session.delete(cartId);
-			return true;
+			session.update(address);
+			
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return false;
+		
+		
+	}
+
+	@Override
+	public void deleteAddress(Address address)
+	{
+		try
+		{
+			Session session=sessionFactory.getCurrentSession();
+			session.delete(address);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	
-
 }

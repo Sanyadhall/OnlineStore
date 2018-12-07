@@ -27,11 +27,31 @@ public class Product {
 	private Double price;
 	private Integer stock;
 	private String imgName;
+	private String imgName2;
 	
     @Transient
 	private MultipartFile pimage;
+    
+    @Transient
+   	private MultipartFile pimage2;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    public String getImgName2() {
+		return imgName2;
+	}
+
+	public void setImgName2(String imgName2) {
+		this.imgName2 = imgName2;
+	}
+
+	public MultipartFile getPimage2() {
+		return pimage2;
+	}
+
+	public void setPimage2(MultipartFile pimage2) {
+		this.pimage2 = pimage2;
+	}
+
+	@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="supplierId",insertable=false,updatable=false,nullable=false)
     private Supplier supplier;
     

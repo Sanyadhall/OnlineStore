@@ -40,6 +40,7 @@
        <th>Stock</th>
        <th>Price</th>
        <th>Product Image</th>
+       <th>Product Image2</th>
        <th>Delete</th>
        <th>Edit</th>
 </tr>
@@ -54,6 +55,7 @@
     <td>${pObj.stock}</td>
     <td>${pObj.price}</td>
     <td><img src="${images}/${pObj.imgName}" style="height:150px;width:150px"></td>
+    <td><img src="${images}/${pObj.imgName2}" style="height:150px;width:150px"></td>
     <td>
     <a href="${contextRoot}/deleteProduct/${pObj.productId}">
     <span class="glyphicon glyphicon-trash"></span>

@@ -26,6 +26,8 @@
 .product-grid .product-image img{width:100%;height:auto}
 .product-grid .pic-1{opacity:1;transition:all .3s ease-out 0s}
 .product-grid:hover .pic-1{opacity:1}
+.product-grid .pic-2{opacity:0;position:absolute;top:0;left:0;transition:all .3s ease-out 0s}
+.product-grid:hover .pic-2{opacity:1}
 .product-grid .social{width:150px;padding:0;margin:0;list-style:none;opacity:0;transform:translateY(-50%) translateX(-50%);position:absolute;top:60%;left:50%;z-index:1;transition:all .3s ease 0s}
 .product-grid:hover .social{opacity:1;top:50%}
 .product-grid .social li{display:inline-block}
@@ -59,7 +61,8 @@
   <div class="container">
   
   
-  <h1>${products[0].category.categoryName}</h1>
+  <h1 align="center" style="color:#E65FAC">${products[0].category.categoryName}</h1>
+  <hr/>
   <div class="col">
      
      <br>
@@ -68,10 +71,13 @@
  
         <div class="col-md-4 ">
         	
+        	 <br>
+           <br> 
             <div class="product-grid d-inline-block">
                 <div class="product-image">
                     <a href="#">
                         <img class="pic-1" src="${images}/${pObj.imgName}">
+                         <img class="pic-2" src="${images}/${pObj.imgName2}">
                         
                     </a>
                     <ul class="social">
@@ -79,7 +85,7 @@
                         <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
 
-                
+              
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#">${pObj.productName}</a></h3>
@@ -89,6 +95,7 @@
                     <a class="add-to-cart" href=""> Add </a>
                 </div>
             </div>
+            
             
  
         </div>

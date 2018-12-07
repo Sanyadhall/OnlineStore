@@ -17,7 +17,7 @@
 <br/>
 
 <div class="container">
-<h1>Category successfully added</h1>	
+<h1>User successfully registered</h1>	
 </div>	
 </body>
 </html>

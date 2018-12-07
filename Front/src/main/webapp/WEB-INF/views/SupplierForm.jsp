@@ -47,6 +47,7 @@
 <s:input type="text" class="form-control" id="supplierAddr" placeholder="Enter Supplier Name" path="supplierAddr"/>
 </div>
 </div>
+
 <div class="form-group">
   <div align="center" >
   <button type="submit" class="btn btn-default"> Add Supplier </button>

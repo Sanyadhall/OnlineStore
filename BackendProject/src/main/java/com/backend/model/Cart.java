@@ -1,9 +1,72 @@
 package com.backend.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name="CartTable")
 public class Cart {
+	
+	private int cartId;
+	private String customerId;
+	
+	@OneToOne
+	private User user;
 
 	
-	private int productId;
-	private String productName;
+	@OneToMany(cascade=CascadeType.REMOVE,fetch=FetchType.EAGER,mappedBy="cart")
+	Collection<Item> items=new ArrayList<>();
+
+
+	public int getCartId() {
+		return cartId;
+	}
+
+
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
+
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	public Collection<Item> getItems() {
+		return items;
+	}
+
+
+	public void setItems(Collection<Item> items) {
+		this.items = items;
+	}
+	
+	
+
 
 }

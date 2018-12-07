@@ -1,4 +1,4 @@
-package com.backend.test;
+package com.backend;
 
 import static org.junit.Assert.*;
 
@@ -25,17 +25,15 @@ public class UserDaoTestCase {
 	
 	@Test
 	@Ignore
-	public void registerUserTestCase()
+     public void registerUserTestCase()
 	{
 		User u=new User();
-		
-		u.setUserName("Ramesh");
+		u.setEmail("sanyadhall@gmail.com");
+		u.setUserName("SANYA DHALL");
 		u.setPassword("12344");
-		u.setCustomerName("Ramesh Dhall");
-		u.setEnabled(true);
-		u.setAddress("Krishna Nagar");
-		u.setMobileNo("9810467890");
-		u.setEmailId("ramesh@gmail.com");
+	    u.setPassword2("12344");
+	    u.setEnabled(true);
+		u.setMobileNo("9871688823");
 		u.setRole("Role_User");
 		
 		assertTrue("Problem in Registering User",userDao.registerUser(u));

@@ -1,4 +1,4 @@
-package com.backend.test;
+package com.backend;
 
 import static org.junit.Assert.*;
 

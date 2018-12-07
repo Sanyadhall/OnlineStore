@@ -77,11 +77,19 @@ public class ProductController {
 			
 			
 			System.out.println("pimage : "+productObj.getPimage());
+			System.out.println("pimage2 : "+productObj.getPimage2());
 			
 			String fileName=productObj.getPimage().getOriginalFilename();
+			String fileName2=productObj.getPimage2().getOriginalFilename();
+
 			System.out.println("filname  :"+fileName);
 			
+			System.out.println("filname  :"+fileName2);
+
+			
 			productObj.setImgName(fileName);
+			productObj.setImgName2(fileName2);
+
 			productDao.addProduct(productObj);
 			
 			try{
@@ -90,6 +98,11 @@ public class ProductController {
 				FileOutputStream fos=new FileOutputStream(filePathString+"/resources/images/"+fileName);
 				BufferedOutputStream bos= new BufferedOutputStream(fos);
 				bos.write(imageBytes);
+				
+				byte[] imageByte=productObj.getPimage2().getBytes();
+				FileOutputStream foss=new FileOutputStream(filePathString+"/resources/images/"+fileName2);
+				BufferedOutputStream boss= new BufferedOutputStream(foss);
+				boss.write(imageByte);
 			}
 			catch(Exception e)
 			{

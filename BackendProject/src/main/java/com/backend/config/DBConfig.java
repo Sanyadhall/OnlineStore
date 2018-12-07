@@ -13,7 +13,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.backend.model.Address;
+import com.backend.model.Cart;
 import com.backend.model.Category;
+import com.backend.model.Item;
 import com.backend.model.Product;
 import com.backend.model.Supplier;
 import com.backend.model.User;
@@ -49,6 +52,11 @@ public class DBConfig {
 		factory.addAnnotatedClass(Product.class);
 		factory.addAnnotatedClass(User.class);
 		factory.addAnnotatedClass(Supplier.class);
+		factory.addAnnotatedClass(Address.class);
+		factory.addAnnotatedClass(Cart.class);
+		factory.addAnnotatedClass(Item.class);
+		
+		
 		return factory.buildSessionFactory();
 		
 	}
