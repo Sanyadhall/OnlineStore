@@ -104,7 +104,7 @@ public class CartController {
 			 	
 		}
 		
-		return "redirect:viewCart?uEmail="+userEmail;
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="addToCart/viewCart",method=RequestMethod.GET)
