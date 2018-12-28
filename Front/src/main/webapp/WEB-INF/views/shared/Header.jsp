@@ -1,6 +1,7 @@
+<%@page import="com.backend.model.User,com.backend.model.Category,java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<c:set var="contextRoot" value="${pageContext.request.contextPath}"/>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" scope="session"/>
 
 
 <nav class="mainNav navbar navbar-expand-md justify-content-center navbar-inverse">
@@ -9,7 +10,7 @@
 
       <br>
       
-        <a class="navbar-brand-justify" href="home">Oozan's</a>
+        <a class="navbar-brand-justify" href="home"/>OHH MY BAG</a>
        
      
 </div>
@@ -31,6 +32,7 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
+        
         
         <c:forEach items="${sessionScope.categories}" var="catObj">
          <li><a href="${contextRoot}/getAllProductsByCategory/${catObj.categoryId}">${catObj.categoryName}</a></li>
@@ -56,12 +58,31 @@
         
       </ul>
      
+
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="${contextRoot}/loginForm"><span class="glyphicon glyphicon-user"></span></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-       <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li> 
-      </ul>
       
+      
+      
+     	<sec:authorize access="isAnonymous()">
+        <li><a href="${contextRoot}/login"><span class="glyphicon glyphicon-user"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+         </sec:authorize>
+         
+         <sec:authorize access="isAuthenticated()">
+         
+         <li class="dropdown">
+         <a class="dropdown-toggle"	data-toggle="dropdown" href="" style="color:white">Hey, ${sessionScope.userObject.userName}
+          <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+          
+         	<li><a href="${contextRoot}/perform-logout">Logout</a></li>
+         	</ul>
+         	<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+       		<li><a href="${contextRoot}/addToCart/viewCart?uEmail=${sessionScope.userEmail}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+      
+       	</sec:authorize>	 
+      </ul>
+   
       
   </div>
   

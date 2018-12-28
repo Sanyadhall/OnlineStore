@@ -35,7 +35,6 @@ public class AddressDaoTestCase {
 
 	
 	@Test
-	@Ignore
 	public void insertAddress()
 	{
 		Address a=new Address();
@@ -43,7 +42,7 @@ public class AddressDaoTestCase {
 		a.setLocality("GEETA COLONY");
 		a.setCity("DELHI");
 		a.setState("NEW DELHI");
-		a.setUser(userDao.getUser("sanyadhall@gmail.com"));
+		a.setUser(userDao.getUser("rahul"));
 		
 		assertTrue("Problem in adding address",addressDao.insertAddress(a));
 		

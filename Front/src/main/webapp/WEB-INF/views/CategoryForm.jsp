@@ -36,6 +36,8 @@
 <label class="control-label col-sm-2" for="categoryName"> Category name:</label>
 <div class="col-sm-10">
 <f:input type="text" class="form-control" id="categoryName" placeholder="Enter the category name" path="categoryName"/>
+    <f:errors path="categoryName"></f:errors>
+
 </div>	
 </div>
 
@@ -43,6 +45,8 @@
 <label class="control-label col-sm-2" for="categoryDesc"> Category Description:</label>
 <div class="col-sm-10">
 <f:input type="text" class="form-control" id="categoryDesc" placeholder="Enter the category Description" path="categoryDesc"/>
+    <f:errors path="categoryDesc"></f:errors>
+
 </div>
 </div>
 <div class="form-group">        

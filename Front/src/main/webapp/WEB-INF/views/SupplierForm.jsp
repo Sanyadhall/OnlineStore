@@ -21,7 +21,7 @@
 <br/>
 
 <div class="container">
-<h2 align="center">Supplier Form</h2>
+<h2 align="center">${formLabel}</h2>
 <s:form class="form-horizontal" action="${contextRoot}/addSupplierProcess" method="post" modelAttribute="supObj">
 
 <c:if test="${not empty operations}">
@@ -29,6 +29,8 @@
 <label class="control-label col-sm-2" for="supplierId"> Supplier Id:</label>
 <div class="col-sm-10">
 <s:input type="text" class="form-control" id="supplierId" path="supplierId" readonly="true"/>
+    
+
 </div>
 </div>
 </c:if>
@@ -38,6 +40,8 @@
 <label class="control-label col-sm-2" for="supplierName"> Supplier Name:</label>
 <div class="col-sm-10">
 <s:input type="text" class="form-control" id="supplierName" placeholder="Enter Supplier Name" path="supplierName"/>
+    <s:errors path="supplierName"></s:errors>
+
 </div>
 </div>
 
@@ -45,12 +49,15 @@
 <label class="control-label col-sm-2" for="supplierAddr"> Supplier Address:</label>
 <div class="col-sm-10">
 <s:input type="text" class="form-control" id="supplierAddr" placeholder="Enter Supplier Name" path="supplierAddr"/>
+    <s:errors path="supplierAddr"></s:errors>
+
 </div>
 </div>
 
 <div class="form-group">
   <div align="center" >
-  <button type="submit" class="btn btn-default"> Add Supplier </button>
+  <button type="submit" class="btn btn-default">${btnLabel} </button>
+  
   </div>
 </div>
 </s:form>

@@ -2,8 +2,12 @@ package com.frontend.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +24,10 @@ public class SupplierController {
 	@Autowired
 	SupplierDao supplierDao;
 	
+	@Autowired
+	HttpSession session;
+
+	
 	
 	@RequestMapping(value="addSupplier",method=RequestMethod.GET)
 	public ModelAndView getSupplierForm()
@@ -27,13 +35,24 @@ public class SupplierController {
 		ModelAndView mv=new ModelAndView("SupplierForm");
 		Supplier s=new Supplier();
 		mv.addObject("supObj",s);
+		mv.addObject("formLabel","Add Supplier Form");
+		mv.addObject("btnLabel","Add Supplier");
 		return mv;
 	}
 	
 	@RequestMapping(value="addSupplierProcess",method=RequestMethod.POST)
-  public ModelAndView addSupplierProcess(@ModelAttribute("supObj")Supplier obj1)
+  public ModelAndView addSupplierProcess(@Valid @ModelAttribute("supObj")Supplier obj1,BindingResult result)
   {
-	  
+	  if (result.hasErrors())
+	  {
+		  ModelAndView mv=new ModelAndView("SupplierForm");
+		  mv.addObject("formLabel","Add Supplier Form");
+			mv.addObject("btnLabel","Add Supplier");
+			return mv;
+
+		  
+
+	  }
 	  ModelAndView mv=new ModelAndView("ViewSuppliers");
 	  if(obj1.getSupplierId()==0)
 	  {
@@ -47,6 +66,9 @@ public class SupplierController {
 	  }
 	  List<Supplier> supplierList= supplierDao.listSuppliers();
 	  mv.addObject("suppliers",supplierList);
+		 session.setAttribute("suppliers",supplierList);
+
+
 	  return mv;
   }
 	
@@ -70,6 +92,8 @@ public class SupplierController {
 	   ModelAndView mv=new ModelAndView("ViewSuppliers");
 	   mv.addObject("suppliers",supplierList);
 	   mv.addObject("msgs","Supplier Deleted");
+	   session.setAttribute("suppliers",supplierList);
+
 	   return mv;
 		
 	}
@@ -81,6 +105,9 @@ public class SupplierController {
 		ModelAndView mv=new ModelAndView("SupplierForm");
 		mv.addObject("supObj",supplier);
 		mv.addObject("operations","Update");
+		 mv.addObject("formLabel","Update Supplier Form");
+		 mv.addObject("btnLabel","Update Supplier");
+
 		return mv;
 	}
 }

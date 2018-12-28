@@ -29,12 +29,14 @@
 			<label class="control-label col-sm-2" for="email" >Email:</label>
 			<div class="col-sm-10">
 			<f:input type="email" class="form-control" id="email" path="email"/>
+			<f:errors path="email"></f:errors>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="userName"> Name:</label>
 			<div class="col-sm-10">
 			<f:input type="text" class="form-control" id="userName" placeholder="Enter the User name" path="userName"/>
+               <f:errors path="userName"></f:errors>
 			</div>
 		</div>
 		
@@ -42,18 +44,21 @@
 			<label class="control-label col-sm-2" for="password">Password:</label>
 			<div class="col-sm-10">
 			<f:input type="password" class="form-control" id="password" placeholder="Enter Password" path="password"/>
+			<f:errors path="password"></f:errors>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="password2">Confirm Password:</label>
 			<div class="col-sm-10">
 			<f:input type="password" class="form-control" id="password2" placeholder="Confirm Password" path="password2"/>
+			<f:errors path="password2"></f:errors>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="mobileNo">Mobile Number:</label>
 			<div class="col-sm-10">
-			<f:input type="text" class="form-control" id="mobileNo" placeholder="Enter the Mobile Number" path="mobileNo"/>
+			<f:input type="tel" class="form-control" id="mobileNo" placeholder="Enter the Mobile Number" path="mobileNo"/>
+			<f:errors path="mobileNo"></f:errors>
 			</div>
 		</div>
 		<div class="text-center">

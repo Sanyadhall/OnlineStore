@@ -1,9 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextRoot" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+}
+</style>
+
   <title>Oozan's</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,6 +31,8 @@
 <body>
 
 <jsp:include page="./shared/Header.jsp"/>
+
+<br>
 
 <div class="container">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -22,22 +44,22 @@
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
+  
   <div class="carousel-inner">
     <div class="item active">
-      <img src="images/image1.jpg" alt="Image not available" style="height:380px;width:1400px">
+      <img src="resources/images/img1.jpg" alt="Image not available" style="height:600px;width:100%">
     </div>
 
     <div class="item">
-      <img src="images/images3.jpg" alt="Image not available" style="height:380px;width:1400px">
+      <img src="resources/images/img4.jpg" alt="Image not available" style="height:600px;width:100%">
     </div>
 
     <div class="item">
-      <img src="images/image2.jpg" alt="Image not available" style="height:380px;width:1400px">
+      <img src="resources/images/img5.jpg" alt="Image not available" style="height:600px;width:100%">
     </div>
     
     <div class="item">
-      <img src="images/images4.jpg" alt="Image not available" style="height:380px;width:1400px">
+      <img src="resources/images/image1.jpg" alt="Image not available" style="height:600px;width:100%">
     </div>
   </div>
 
@@ -51,21 +73,49 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
 
-<div class="jumbotron" style="margin-top:20px">
-    <h1>BAGS</h1>      
-    <p>An invitation to change inspired by nature; a new attitude towards daily urban full of new spaces where you can be yourself.</p>
+<br>
+<br>
+
+<div class="container">
+       
+    
+    <img src="resources/images/Banner-A1.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:1000px"> 
+    
+  
   </div>
   
-  <hr/> 
- <footer>
+  <div class="container">
+<div class="col-md-4 ">  
+       <img src="resources/images/bag1.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:1000px"> 
+   
+</div>
+
+<div class="col-md-4">
+       <img src="resources/images/bag2.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:1000px"> 
+
+</div>
+<div class="col-md-4">
+       <img src="resources/images/bag3.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:1000px"> 
+
+</div>
+
+</div>
+ 
+ <br>
+ <br>
+ <hr/>
+ <div class="container">
+ <footer class="footer">
+ 
  	<div class="container">
 		<div class="row">
-			<div class="col-md-4 widget">
+			<div class="col-md-3 widget">
 				<h2 class="widget_title green">Feedback</h2>
 
 			</div>
-			<div class="col-md-4 widget">
+			<div class="col-md-3 widget">
 				<h2 class="widget_title green">Quick Links</h2>
 				<ul>
 					<li><a href="Home.jsp">Home</a></li>
@@ -74,7 +124,7 @@
 					<li><a href="ContactUs.jsp">Contact us</a></li>
 				</ul>
 			</div>
-			<div class="col-md-4 widget">
+			<div class="col-md-3 widget">
 				<h2 class="widget_title green">Contact Us</h2>
 				<div class="row1">Thanks for visiting our site</div>
 				<div class="row2">
@@ -83,48 +133,48 @@
 				<div class="row3">
 					<strong>Email us:</strong> sanyadhall94@gmail.com
 				</div>
-			
-		
+				</div>
+				<div class="col-md-3 widget">
+				<h2 class="widget_title green">Follow Us</h2>
+			<ul>
+            <li class="col-sm-12">
+              <i class="fa fa-facebook"> </i>
+              <a class="btn-floating btn-fb mx-1"> Facebook
+              
+              </a>
+             </li>
+            <li class="list-inline-item col-sm-12">
+                <i class="fa fa-twitter"> </i>
+              <a class="btn-floating btn-tw mx-1">Twitter
 
-    <!-- Footer Elements -->
-   
-
-      <!-- Social buttons -->
-      <ul class="list-unstyled list-inline text-center">
-        <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
-            <i class="fa fa-facebook"> </i>
-          </a>
+              </a>
         </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
-            <i class="fa fa-twitter"> </i>
-          </a>
+        <li class="list-inline-item col-sm-12">
+                 <i class="fa fa-google-plus"> </i>
+              <a class="btn-floating btn-gplus mx-1">Google Plus</a>
         </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fa fa-google-plus"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fa fa-linkedin"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-dribbble mx-1">
-            <i class="fa fa-dribbble"> </i>
-          </a>
-        </li>
+        <li class="col-sm-12">
+        <i class="fa fa-linkedin"> </i>
+            <a class="btn-floating btn-li mx-1"> Linkedin
+            
+            </a>
+        
       </ul>
-      <!-- Social buttons -->
-
-    </div>
-    </div>
+      </div>
+      
+      </div>
+				
+			</div>
+		
+			
+			
+			
+				</footer>
+		</div>	
     
 
- </div>
- </footer>
+
+ 
 </body>
 </html>
   

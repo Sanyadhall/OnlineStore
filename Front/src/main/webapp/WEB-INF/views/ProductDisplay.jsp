@@ -20,6 +20,32 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style>
+.collapsed-icon-toggle.collapsed .on-closed {
+  display: initial;
+}
+.collapsed-icon-toggle.collapsed .on-opened {
+  display: none;
+}
+.collapsed-icon-toggle .on-closed {
+  display: none;
+}
+.collapsed-icon-toggle .on-opened {
+  display: initial;
+}
+.scroll-v-250px {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+.padding-v-xs {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.btn.ico span.icon {
+  opacity: 0;
+}
+.btn.ico.active span.icon {
+  opacity: 1;
+}
 .product-grid{font-family:Raleway,sans-serif;text-align:center;padding:0 0 72px;border:1px solid rgba(0,0,0,.1);overflow:hidden;position:relative;z-index:1;display:block}
 .product-grid .product-image{position:relative;transition:all .3s ease 0s}
 .product-grid .product-image a{display:inline-block}
@@ -50,12 +76,231 @@
 
 }
 </style>
+</head>
 
 <body>
 
 <jsp:include page="./shared/Header.jsp"/>
 
 <br>
+
+<div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#filter1">
+                        Filter
+                    </a>
+                    <a class="pull-right" data-toggle="collapse" href="#filter1">
+                        <span class="glyphicon glyphicon-filter"></span>
+                    </a>
+                </h4>
+            </div>
+            <div id="filter1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="filter-setting">
+                    <form action="" method="GET">
+                        <label>Price</label>
+                        <a class="pull-right collapsed-icon-toggle" href="#coll-0" data-toggle="collapse">
+                            <span class="glyphicon glyphicon-minus on-opened"></span>
+                            <span class="glyphicon glyphicon-plus on-closed"></span>
+                        </a>
+                        <br/>
+                        <div id="coll-0" class="collapse in">
+                            <input type="text" placeholder="0"/> 
+                            - 
+                            <input type="text" placeholder="20000"/>
+                        </div>
+                        <hr class="line"/>
+                        <label>Bags</label>
+                        <a class="pull-right collapsed-icon-toggle" href="#coll-1" data-toggle="collapse">
+                            <span class="glyphicon glyphicon-minus on-opened"></span>
+                            <span class="glyphicon glyphicon-plus on-closed"></span>
+                        </a>
+                        <br/>
+                        <div id="coll-1" class="collapse in">
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>HandBags</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Sling Bags</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Satchel Bags</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Laptop Bags</span>
+                            </div>
+                        </div>
+                        <hr class="line"/>
+                        <label>Brand</label>
+                        <a class="pull-right collapsed-icon-toggle" href="#coll-2" data-toggle="collapse">
+                            <span class="glyphicon glyphicon-minus on-opened"></span>
+                            <span class="glyphicon glyphicon-plus on-closed"></span>
+                        </a>
+                        <br/>
+                        <div id="coll-2" class="scroll-v-250px collapse in">
+                            <div class="padding-v-xs" data-toggle="buttons">
+                            <label class="btn btn-default btn-xs ico">
+                                <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                            </label>
+                                <span>Mango</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Tommy hilfiger</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Allen Solly</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Kazo</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Micheal Kors</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Caprese</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>ALDO</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>AND</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Van Huesen</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Malone</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Yelloe</span>
+                            </div>
+                            <div class="padding-v-xs" data-toggle="buttons">
+                                <label class="btn btn-default btn-xs ico">
+                                    <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                    <span class="icon glyphicon glyphicon-ok"></span>
+                                </label>
+                                <span>Lavie</span>
+                            </div>
+                        </div>
+                        <hr class="line"/>
+                        <label>Lorem Ipsum</label>
+                        <a class="pull-right collapsed-icon-toggle" href="#coll-3" data-toggle="collapse">
+                            <span class="glyphicon glyphicon-minus on-opened"></span>
+                            <span class="glyphicon glyphicon-plus on-closed"></span>
+                        </a>
+                        <br/>
+                        <div id="coll-3" class="scroll-v-250px collapse in">
+                            <div class="padding-v-xs" data-toggle="buttons">
+                            <label class="btn btn-default btn-xs ico">
+                                <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                            </label>
+                                <span>Lorem Ipsum 1</span>
+                            </div>
+                        </div>
+                        <hr class="line"/>
+                        <label>Lorem Ipsum</label>
+                        <a class="pull-right collapsed-icon-toggle" href="#coll-4" data-toggle="collapse">
+                            <span class="glyphicon glyphicon-minus on-opened"></span>
+                            <span class="glyphicon glyphicon-plus on-closed"></span>
+                        </a>
+                        <br/>
+                        <div id="coll-4" class="scroll-v-250px collapse in">
+                            <div class="padding-v-xs" data-toggle="buttons">
+                            <label class="btn btn-default btn-xs ico">
+                                <input type="checkbox" name=""
+                                       value="" autocomplete="off"/>
+                                <span class="icon glyphicon glyphicon-ok"></span>
+                            </label>
+                                <span>Lorem Ipsum 1</span>
+                            </div>
+                        </div>
+                        <hr class="line"/>
+                        <button type="submit" class="btn btn-block btn-success">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
   <div class="container">
@@ -81,8 +326,8 @@
                         
                     </a>
                     <ul class="social">
-                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="${contextRoot}/quickview/${pObj.productId}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="${contextRoot}/addToCart/${pObj.productId}" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                     </ul>
 
               

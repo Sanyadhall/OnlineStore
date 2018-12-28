@@ -19,7 +19,7 @@ public class Item {
 	private int itemId;
 	private String customerId;
 	private double price;
-	private String quantity;
+	private int quantity;
 	
 	
 	@OneToOne
@@ -53,11 +53,11 @@ public class Item {
 		this.price = price;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 

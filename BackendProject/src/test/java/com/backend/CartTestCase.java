@@ -3,6 +3,7 @@ package com.backend;
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,6 +11,7 @@ import com.backend.config.DBConfig;
 import com.backend.dao.CartDao;
 import com.backend.dao.UserDao;
 import com.backend.model.Cart;
+import com.backend.model.User;
 
 public class CartTestCase {
 	
@@ -17,28 +19,28 @@ public class CartTestCase {
 	static UserDao userDao;
 	
 	@BeforeClass
-	public static void initialiaze()
-	
+	public static void initialize()
 	{
-		
-		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext();
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		context.register(DBConfig.class);
 		context.refresh();
+	
+		cartDao=context.getBean("cartDao",CartDao.class);
+	    userDao=context.getBean("userDao",UserDao.class);
 		
-		cartDao =context.getBean("cartDao",CartDao.class);
-		userDao=context.getBean("userDao",UserDao.class);
+		
 	}
-
+	
 	@Test
+	@Ignore
 	public void addCart()
 	{
 		Cart c=new Cart();
-		c.setUser(userDao.getUser("sanyadhall@gmail.com"));
-		c.setCustomerId("1");
+		c.setCartId(1);
+		c.setCustomerId("2");
+		c.setUser(userDao.getUser("rahul"));
 		
-		assertTrue("Problem in adding Cart",cartDao.addCart(c));
-		
-		
+		assertTrue("Problem in adding cart",cartDao.addCart(c));
 		
 		
 	}

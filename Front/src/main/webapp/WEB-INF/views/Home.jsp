@@ -20,7 +20,7 @@ body {
 }
 </style>
 
-  <title>Oozan's</title>
+  <title>Ohh My Bag</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -74,54 +74,41 @@ body {
   </a>
 </div>
 </div>
+
+<br>
 <br>
 
 <div class="container">
-    <h1>BAGS</h1>      
-    <p>An invitation to change inspired by nature; a new attitude towards daily urban full of new spaces where you can be yourself.</p>
+       
     
-    <hr/>
-    <br>
-    <div class="row">
-    <div class="col-lg-6">
-    
-    
-    <img src="resources/images/img3.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:1000px">
+    <img src="resources/images/Banner-A1.jpg"class="img-responsive" alt="Image not available" style="height:500px; width:100%"> 
     
   
-  <div class="col-lg-6">
+  <br>
+  <br>
+  <br>
+  </div>
   
+  <div class="container">
+<div class="col-md-4 ">  
+<c:forEach items="${sessionScope.categories}" var="catObj">
+         <a href="${contextRoot}/getAllProductsByCategory/${catObj.categoryId}">${catObj.categoryName}</a>
+          </c:forEach>
+       <img src="resources/images/bag1.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
+   
+</div>
 
-         <p>
-         
-         A Signature Surprise
-    Minimalist, retro or ladylike get them
-   a Signature gift in their signature style.
-         </p>
-         </div>
-  
-         </div>
-  </div>
+<div class="col-md-4">
+       <img src="resources/images/bag2.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
 
-  <div class="col">
-  
-  <div class="col-lg-6 container">
-  
+</div>
+<div class="col-md-4">
+       <img src="resources/images/bag3.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
+
+</div>
+
+</div>
  
-  
-  <div class="col-lg-6">
-  
-  <img src="resources/images/Woody3.jpg"class="img-responsive" alt="Image not available" style="height:600px; width:3600px">
-     
-  </div>
-  </div>
-  
-  </div>
-  
- </div>
- 
- 
- <br>
  <br>
  <br>
  <hr/>

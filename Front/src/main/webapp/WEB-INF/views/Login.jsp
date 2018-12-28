@@ -46,31 +46,47 @@
 </div>
  </div>
 
+
+
 <div class="col-lg-6">
   <h3 align="center" style="color:#E65FAC">REGISTERED CUSTOMERS</h3>
   <hr/>
     <h6 align="center" class="text-info"> If you have an account with us,Please Log In</h6>
-<f:form class="form-horizontal" action="${contextRoot}/login" method="post" modelAttribute="loginObj">  
+    <c:if test="${not empty message2}">
+	<div class="alert alert-success">
+		${message2}
+	</div>
+</c:if>  
+<form class="form-horizontal" action = "${contextRoot}/login" method="post">  
   <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
       <div class="col-sm-10">
-        <f:input type="email" class="form-control" id="email" placeholder="Enter email" path="email"/>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required"/>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-10">          
-        <f:input type="password" class="form-control" id="password" placeholder="Enter password" path="password"/>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required="required"/>
       </div>
     </div>
     <div class="row">
   <div class="col-sm-12">
     <div class="text-center">
+    <input type="hidden"
+    name="${_csrf.parameterName}"
+    value="${_csrf.token}"/>
       <button class="btn btn-default"id="singlebutton" style="background-color:#E65FAC;color:white">Login</button>
     </div>
+    <c:if test="${not empty message}">
+	<div class="alert alert-danger">
+		${message}
+	</div>
+</c:if>  
+
   </div>
 </div>
-  </f:form>
+  </form>
 </div>
 
 

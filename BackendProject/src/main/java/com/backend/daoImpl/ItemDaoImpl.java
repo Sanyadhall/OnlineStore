@@ -65,8 +65,10 @@ public class ItemDaoImpl implements ItemDao {
 		{
 			
 			Session session=sessionFactory.getCurrentSession();
-			session.delete(itemId);
+			Item obj=session.get(Item.class, itemId);
+			session.delete(obj);
 			return true;
+			
 			
 		}
 		catch(Exception e)
@@ -84,6 +86,15 @@ public class ItemDaoImpl implements ItemDao {
 		try
 		{
 			
+			Session session=sessionFactory.getCurrentSession();
+			Query query=session.createQuery("from Item where productId=:x and customerId=:y");
+			query.setInteger("x",productId);
+			query.setString("y",customerId);
+			List<Item> getItemsListByCart=query.list();
+			List<Item> list=query.list();
+			if(list.size()!=0){
+				return list.get(0);
+			}
 		}
 		catch(Exception e)
 		{
@@ -94,14 +105,11 @@ public class ItemDaoImpl implements ItemDao {
 	}
 
 	@Override
-	public List<Item> getItemsListByCart(int cartId) 
-	{
+	public List<Item> getItemsListByCart(int cartId) {
 		
-		try
-		{
-			
+		try{
 			Session session=sessionFactory.getCurrentSession();
-			Query query=session.createQuery("from Item where cartId=:x");
+			Query query=session.createQuery("from Item where cart.cartId=:x");
 			query.setInteger("x",cartId);
 			List<Item> getItemsListByCart=query.list();
 			return getItemsListByCart;

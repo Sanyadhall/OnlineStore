@@ -55,6 +55,7 @@ public class CategoryTestCase {
 	}
 	
 	@Test
+	@Ignore
 	public void getCategoryByIdTest(){
 		Category obj=categoryDao.getCategory(1);
 		System.out.println(obj);

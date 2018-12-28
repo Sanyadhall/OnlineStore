@@ -3,8 +3,12 @@ package com.frontend.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,9 @@ public class CategoryController {
 @Autowired
 CategoryDao categoryDao;
 
+@Autowired
+HttpSession session;
+
  @RequestMapping(value="addCategory",method=RequestMethod.GET)
  public ModelAndView getCategoryForm()
 {
@@ -35,8 +42,18 @@ CategoryDao categoryDao;
 }
 
  @RequestMapping(value="addCategoryProcess",method=RequestMethod.POST)
- public ModelAndView addCategoryProcess(@ModelAttribute("catObj")Category obj)
+ public ModelAndView addCategoryProcess(@Valid @ModelAttribute("catObj")Category obj,BindingResult result)
  {
+
+		if(result.hasErrors()){
+			
+			 ModelAndView mv=new ModelAndView("CategoryForm");
+				mv.addObject("formLabel","Add Category Form");
+				mv.addObject("btnLabel","Add Category");
+				
+				return mv;
+		}
+	 
 	
 	ModelAndView mv=new ModelAndView("ViewCategories");
 	if(obj.getCategoryId()==0)
@@ -51,7 +68,7 @@ CategoryDao categoryDao;
 	}
 	 List<Category> catList=categoryDao.listCategories();
 	 mv.addObject("categories",catList);
-	
+	 session.setAttribute("categories",catList);
 	return mv;
 	
 }
@@ -76,6 +93,7 @@ CategoryDao categoryDao;
 	 ModelAndView mv=new ModelAndView("ViewCategories");
 	 mv.addObject("categories",catList);
 	 mv.addObject("msg","Category Deleted Successfully");
+	 session.setAttribute("categories",catList);
 	 return mv;
  }
  
@@ -88,6 +106,8 @@ CategoryDao categoryDao;
 	 mv.addObject("operation","Update");
 	 mv.addObject("formLabel","Update Category Form");
 	 mv.addObject("btnLabel","Update Category");
+
+
 	 return mv;
  }
  

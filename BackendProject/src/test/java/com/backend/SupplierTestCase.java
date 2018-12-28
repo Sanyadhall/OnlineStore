@@ -45,6 +45,7 @@ public class SupplierTestCase {
 	}
 	
 	@Test
+	@Ignore
 	public void deleteSupplier()
 	{
 	  Supplier s=supplierDao.getSupplierById(7);

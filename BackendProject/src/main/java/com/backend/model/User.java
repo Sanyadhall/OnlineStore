@@ -10,20 +10,35 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="UserTable_04")
 public class User {
 	
 	@Id
+	@NotEmpty(message="Email is Required")
+	@Email(message="Email should be in correct format")
 	private String email;
+	
+	@NotEmpty(message="UserName is Required")
 	private String userName;
+	
+	
 	private String password;
+	
 	
 	@Transient
 	private String password2;
 	private boolean enabled;
 	private String role;
+	
+	@Pattern(regexp="(^$|[0-9]{10})")
+	@Size(min=10,max=10,message="Phone Number must be of 10 Digit")
 	private String mobileNo;
 	
 	

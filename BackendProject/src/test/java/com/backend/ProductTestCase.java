@@ -42,6 +42,7 @@ public class ProductTestCase {
 	}
 	
 	@Test
+	@Ignore
      public void getProductByCategory(){
     	 List<Product> product=productDao.getAllProductsByCategory(8);
  		for(Product pObj:product){

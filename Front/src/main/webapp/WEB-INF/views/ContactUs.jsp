@@ -77,10 +77,13 @@ body {
 </head>
 <body>
 
+
 <div class="container">
+
 	<div class="map">
 	<iframe src=""https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d112061.09262729759!2d77.208022!3d28.632485!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x644e33bc3def0667!" width="100%" height="650px" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
+	
 	<div class="contact-form">
 		<h3 class="title">CONTACT US</h3>
 		<h5 class="subtitle">We are here assist you.</h5>

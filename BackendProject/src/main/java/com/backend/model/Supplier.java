@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="SupplierTable_04")
 public class Supplier {
@@ -19,7 +21,11 @@ public class Supplier {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private int supplierId;
+	
+	@NotEmpty(message="Supplier name Required")
 	private String supplierName;
+	
+	@NotEmpty(message="Supplier address is required")
 	private String supplierAddr;
 	
 	

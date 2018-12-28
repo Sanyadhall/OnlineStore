@@ -36,6 +36,7 @@
 <label class="control-label col-sm-2" for="productName"> Product Name :</label>
 <div class="col-sm-10">
   <f:input type="text" class="form-control" id="productName" placeholder="Enter the Product name" path="productName"/>
+  <f:errors path="productName"></f:errors>
 </div>
 </div>
 
@@ -43,6 +44,7 @@
 <label class="control-label col-sm-2" for="productDesc"> Product Description :</label>
 <div class="col-sm-10">
   <f:input type="text" class="form-control" id="productDesc" placeholder="Enter the Product Description" path="productDesc"/>
+  <f:errors path="productDesc"></f:errors>
 </div>
 </div>
 
@@ -51,6 +53,7 @@
 <div class="col-sm-10">
  <f:select path="supplierId" class="form-control">
  <f:option value="0" class="form-control">----Select Supplier---</f:option>
+ <f:errors path="supplierId"></f:errors>
  <c:forEach items="${supplierList}" var="pObj">
   <f:option value="${pObj.supplierId}" class="form-control">${pObj.supplierName}</f:option>
  </c:forEach>
@@ -63,8 +66,10 @@
 <div class="col-sm-10">
   <f:select path="categoryId" class="form-control">
   <f:option value="0" class="form-control">----Select category---</f:option>
+  <f:errors path="categoryId"></f:errors>
   <c:forEach items="${categoryList}" var="cObj">
   <f:option value="${cObj.categoryId}" class="form-control">${cObj.categoryName}</f:option>
+
   </c:forEach>
   </f:select>
      
@@ -74,14 +79,18 @@
 <div class="form-group">
 <label class="control-label col-sm-2" for="Stock"> Stock :</label>
 <div class="col-sm-10">
-  <f:input type="text" class="form-control" id="Stock" placeholder="Enter the Stock" path="stock"/>
+  <f:input type="number" class="form-control" id="Stock" placeholder="Enter the Stock" path="stock"/>
+    <f:errors path="stock"></f:errors>
+  
 </div>
 </div>
 
 <div class="form-group">
 <label class="control-label col-sm-2" for="price"> Price :</label>
 <div class="col-sm-10">
-  <f:input type="text" class="form-control" id="price" placeholder="Enter the Price" path="price"/>
+  <f:input type="number" class="form-control" id="price" placeholder="Enter the Price" path="price"/>
+    <f:errors path="price"></f:errors>
+  
 </div>
 </div>
 
@@ -89,6 +98,7 @@
 <label for="pimage" class="control-label col-sm-2"> Upload Image :</label>
 <div class="col-sm-10">
 <f:input type="file" class="form-control" id="pimage" placeholder="Choose Image" path="pimage"/>
+<f:errors path="pimage"></f:errors>
 </div>
 </div>
 
@@ -96,6 +106,7 @@
 <label for="pimage2" class="control-label col-sm-2"> Upload Image2 :</label>
 <div class="col-sm-10">
 <f:input type="file" class="form-control" id="pimage2" placeholder="Choose Image" path="pimage2"/>
+<f:errors path="pimage2"></f:errors>
 </div>
 </div>
 
