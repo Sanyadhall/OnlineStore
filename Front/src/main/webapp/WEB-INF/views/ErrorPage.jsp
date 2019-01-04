@@ -34,7 +34,7 @@ body {
             <div class="col-md-12 text-center">
                 <span class="display-1 d-block">404</span>
                 <div class="mb-4 lead">The page you are looking for was not found.</div>
-                <a href="home" class="btn btn-link"  style="background-color:#E65FAC;color:white">Back to Home</a>
+                <a href="${contextRoot}/home" class="btn btn-link"  style="background-color:#E65FAC;color:white">Back to Home</a>
             </div>
         </div>
     </div>

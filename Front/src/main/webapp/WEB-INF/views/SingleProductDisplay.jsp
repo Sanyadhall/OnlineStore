@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="sp" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="p" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
     
     
@@ -21,7 +21,7 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}"/>
 
 <sp:url value="/resources/images" var="images"/>
-<p:forEach items="${productObj}" var="pObj"></p:forEach>
+
 <style>
 .gold{
 	color: #FFBF00;
@@ -156,6 +156,9 @@
 <title>Ohh My Bag</title>
 </head>
 <body>
+
+ <jsp:include page="./shared/Header.jsp"/>
+ <br>
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
@@ -187,7 +190,17 @@
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
 					<div class="product-price">Rs.${pObj.price}</div>
-					<div class="product-stock">${pObj.stock}</div>
+					<div class="product-stock">
+						<c:choose>
+							<c:when test="${pObj.stock==0}">
+								Out of Stock!!!
+							</c:when>
+							<c:otherwise>
+								${pObj.stock}
+							</c:otherwise>
+						</c:choose>
+						
+					</div>
 					<hr>
 					<div class="btn-group cart">
 						<button type="button" class="btn btn-success">

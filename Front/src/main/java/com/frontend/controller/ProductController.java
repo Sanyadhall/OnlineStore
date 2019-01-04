@@ -265,15 +265,18 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="quickview/{pId}")
-	public ModelAndView getQuickView(@PathVariable("pid")int productId)
+	public ModelAndView getQuickView(@PathVariable("pId")int productId)
 	{
 		ModelAndView mv= new ModelAndView("SingleProductDisplay");
 		Product p= productDao.getProduct(productId);
-		mv.addObject("productObj",p);
+		mv.addObject("pObj",p);
 		return mv;
-	}
+		}
+	
+	
 
-}
+	
 	            
+}	            
 		
 	

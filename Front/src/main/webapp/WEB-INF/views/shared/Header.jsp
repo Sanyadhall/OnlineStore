@@ -10,7 +10,7 @@
 
       <br>
       
-        <a class="navbar-brand-justify" href="home"/>OHH MY BAG</a>
+      
        
      
 </div>
@@ -28,6 +28,8 @@
       <ul class="nav navbar-nav">
       <li><a href="${contextRoot}/aboutUs">About Us</a> </li>
         <li class="active"><a href="${contextRoot}/home">Home</a></li>
+        
+        
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category
         <span class="caret"></span></a>
@@ -40,6 +42,9 @@
         </ul>
       </li>
       
+      
+      
+      <sec:authorize access="hasAuthority('ADMIN')">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Options
         <span class="caret"></span></a>
@@ -52,6 +57,7 @@
           <li><a href="${contextRoot}/viewAllProducts">View All Products</a></li>
         </ul>
       </li>
+      </sec:authorize>
         
         
         <li><a href="${contextRoot}/contactUs">Contact Us</a></li>
@@ -69,7 +75,8 @@
          </sec:authorize>
          
          <sec:authorize access="isAuthenticated()">
-         
+      
+      	   
          <li class="dropdown">
          <a class="dropdown-toggle"	data-toggle="dropdown" href="" style="color:white">Hey, ${sessionScope.userObject.userName}
           <span class="caret"></span></a>
@@ -78,8 +85,10 @@
          	<li><a href="${contextRoot}/perform-logout">Logout</a></li>
          	</ul>
          	<li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+         	
+         	<sec:authorize access="hasAuthority('USER')">
        		<li><a href="${contextRoot}/addToCart/viewCart?uEmail=${sessionScope.userEmail}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-      
+      		</sec:authorize>
        	</sec:authorize>	 
       </ul>
    

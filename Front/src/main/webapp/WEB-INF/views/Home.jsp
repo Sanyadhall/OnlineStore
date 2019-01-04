@@ -32,6 +32,8 @@ body {
 
 <jsp:include page="./shared/Header.jsp"/>
 
+	<h1 align="center" style="color:#E65FAC">OH MY BAG</h1>
+
 <br>
 
 <div class="container">
@@ -91,18 +93,19 @@ body {
   
   <div class="container">
 <div class="col-md-4 ">  
-<c:forEach items="${sessionScope.categories}" var="catObj">
-         <a href="${contextRoot}/getAllProductsByCategory/${catObj.categoryId}">${catObj.categoryName}</a>
-          </c:forEach>
+
+            <a href=${contextRoot}/getAllProductsByCategory/${catObj.categoryId}" align="center">HandBags</a>
        <img src="resources/images/bag1.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
    
 </div>
 
 <div class="col-md-4">
+        <a href="">ShoulderBags</a>
        <img src="resources/images/bag2.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
 
 </div>
 <div class="col-md-4">
+        <a href="">SlingBags</a>
        <img src="resources/images/bag3.jpg"class="img-responsive" alt="Image not available" style="height:450px; width:1000px"> 
 
 </div>
