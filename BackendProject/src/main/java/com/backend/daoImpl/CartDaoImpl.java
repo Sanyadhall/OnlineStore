@@ -68,7 +68,8 @@ public class CartDaoImpl implements CartDao {
 		{
 			
 			Session session=sessionFactory.getCurrentSession();
-			session.delete(cartId);
+			Cart obj=session.get(Cart.class,cartId);
+			session.delete(obj);
 			return true;
 		}
 		catch(Exception e)

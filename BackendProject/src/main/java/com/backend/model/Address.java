@@ -22,6 +22,18 @@ public class Address {
 		private String city;
 		private String state;
 		private String pinCode;
+		private String country;
+
+		public String getCountry() {
+			return country;
+		}
+
+
+		public void setCountry(String country) {
+			this.country = country;
+		}
+
+
 
 		@ManyToOne(fetch=FetchType.EAGER)
 		@JoinColumn(name="email")

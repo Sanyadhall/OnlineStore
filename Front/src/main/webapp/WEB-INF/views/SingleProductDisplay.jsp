@@ -203,9 +203,9 @@
 					</div>
 					<hr>
 					<div class="btn-group cart">
-						<button type="button" class="btn btn-success">
+						<a href ="${contextRoot}/addToCart/${pObj.productId}" type="button" class="btn btn-success">
 							Add to cart 
-						</button>
+						</a>
 					</div>
 					<div class="btn-group wishlist">
 						<button type="button" class="btn btn-danger">
@@ -219,7 +219,7 @@
 			<div class="col-md-12 product-info">
 					<ul id="myTab" class="nav nav-tabs nav_tabs">
 						
-						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+						<li><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
 						<li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
 						<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>
 						

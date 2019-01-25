@@ -31,14 +31,16 @@
         
         
         <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop By Category
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Shop 
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
         
+        <li class="col-sm-6">
         
         <c:forEach items="${sessionScope.categories}" var="catObj">
          <li><a href="${contextRoot}/getAllProductsByCategory/${catObj.categoryId}">${catObj.categoryName}</a></li>
           </c:forEach>
+          </li>
         </ul>
       </li>
       

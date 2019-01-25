@@ -1,6 +1,9 @@
 package com.backend.daoImpl;
 
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +90,24 @@ public class AddressDaoImpl implements AddressDao
 		}
 		
 		
+	}
+
+	@Override
+	public List<Address> getAddressForUser(String customerId) {
+		try
+		{
+			Session session=sessionFactory.getCurrentSession();
+			 Query query= session.createQuery("from Address where user.email=:a");
+			 query.setString("a",customerId);
+			 List<Address> address=query.list();
+			 return address;
+			 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	
