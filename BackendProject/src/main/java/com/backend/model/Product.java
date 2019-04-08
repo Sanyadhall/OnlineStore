@@ -10,7 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -19,19 +21,53 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer productId;
+	private int productId;
+	
+	@NotEmpty(message="Product Name is Required")
 	private String productName;
+	
+	@NotEmpty(message="Product Description is required")
 	private String productDesc;
+	
+	@NotNull
 	private int supplierId;
+	
+	@NotNull
 	private int categoryId;
+	
+	@NotNull
 	private Double price;
+	
+	@NotNull
 	private Integer stock;
+
 	private String imgName;
+	
+	private String imgName2;
 	
     @Transient
 	private MultipartFile pimage;
+    
+    @Transient
+   	private MultipartFile pimage2;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    public String getImgName2() {
+		return imgName2;
+	}
+
+	public void setImgName2(String imgName2) {
+		this.imgName2 = imgName2;
+	}
+
+	public MultipartFile getPimage2() {
+		return pimage2;
+	}
+
+	public void setPimage2(MultipartFile pimage2) {
+		this.pimage2 = pimage2;
+	}
+
+	@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="supplierId",insertable=false,updatable=false,nullable=false)
     private Supplier supplier;
     
@@ -58,11 +94,11 @@ public class Product {
 		this.category = category;
 	}
 
-	public Integer getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 
-	public void setProductId(Integer productId) {
+	public void setProductId(int productId) {
 		System.out.println("Setter of pid");
 		this.productId = productId;
 	}

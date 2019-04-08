@@ -12,13 +12,20 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="CategoryTable_04")
 public class Category {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int categoryId;
+	
+	@NotEmpty(message="Category name is required")
 	private String categoryName;
+	
+	
+    @NotEmpty(message="Category description is required")
 	private String categoryDesc;
 	
 	@OneToMany(fetch=FetchType.EAGER,mappedBy="category",cascade=CascadeType.ALL)
